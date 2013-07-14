@@ -15,14 +15,14 @@ namespace Lab.Heroes.Core.Tests.DomainObjects.Serialization
         [SetUp]
         public void SetUp()
         {
-            HeroFactory.Register(heroName, new MockDeadpoolFactoryStrategy());
+            ObjectFactory.Register<IHero>(new MockHeroFactoryStrategy());
         }
 
         [Test]
         public void ToJson()
         {
             // Build 
-            IHero hero = HeroFactory.Create(heroName);
+            IObjectBase hero = ObjectFactory.Create<ISpecialHero>(heroName);
             // Process
             var jsonString = hero.Json.AsString();
             // Check

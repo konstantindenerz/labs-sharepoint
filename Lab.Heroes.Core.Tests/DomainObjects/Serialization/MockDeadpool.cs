@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Lab.Heroes.Core.Tests.DomainObjects.Serialization
 {
-    class MockDeadpool : IHero
+    class MockDeadpool : ISpecialHero
     {
         public MockDeadpool(){
 

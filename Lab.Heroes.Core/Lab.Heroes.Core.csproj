@@ -38,9 +38,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DomainObjects\HeroFactory.cs" />
     <Compile Include="DomainObjects\IHero.cs" />
-    <Compile Include="DomainObjects\IHeroFactoryStrategy.cs" />
+    <Compile Include="DomainObjects\ObjectFactory.cs" />
+    <Compile Include="DomainObjects\IObjectBase.cs" />
+    <Compile Include="DomainObjects\IObjectFactoryStrategy.cs" />
     <Compile Include="DomainObjects\Serialization\AbstractJsonSerializer.cs" />
     <Compile Include="DomainObjects\Serialization\IJsonSerializable.cs" />
     <Compile Include="DomainObjects\Serialization\IJsonSerializer.cs" />

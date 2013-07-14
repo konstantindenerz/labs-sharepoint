@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Lab.Heroes.Core.Tests.DomainObjects.Serialization
 {
-    class MockDeadpoolFactoryStrategy : IHeroFactoryStrategy
+    class MockHeroFactoryStrategy : IObjectFactoryStrategy
     {
-        public IHero Execute()
+        public IObjectBase Execute(string name)
         {
             var deadpool = new MockDeadpool();
             var serializer = new MockJsonSerializer(deadpool);

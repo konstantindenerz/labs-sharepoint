@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Lab.Heroes.Core.DomainObjects
 {
-    public interface IHeroFactoryStrategy
+    public interface IObjectFactoryStrategy
     {
-        IHero Execute();
+        IObjectBase Execute(string name);
     }
 }

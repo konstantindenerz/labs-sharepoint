@@ -15,10 +15,10 @@ namespace Lab.Heroes.Core.Tests.DomainObjects.Serialization
         {
             // Build
             var heroName = "Deadpool";
-            IHero hero;
-            HeroFactory.Register(heroName, new MockDeadpoolFactoryStrategy());
+            IObjectBase hero;
+            ObjectFactory.Register<IHero>(new MockHeroFactoryStrategy());
             // Process
-            hero = HeroFactory.Create(heroName);
+            hero = ObjectFactory.Create<IHero>(heroName);
             // Check
             Assert.NotNull(hero);
         }
