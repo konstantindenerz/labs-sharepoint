@@ -7,22 +7,12 @@ using System.Text;
 
 namespace Lab.Heroes.Core.Tests.DomainObjects
 {
-    class MockObject : IObjectBase
+    class MockObject : AbstractObjectBase, IObjectBase
     {
         public MockObject()
         {
 
         }
-        
-        private IJsonSerializer jsonSerializer;
-
-        public IJsonSerializer Json
-        {
-            get { return jsonSerializer; }
-            set
-            {
-                jsonSerializer = value;
-            }
-        }
+      
     }
 }

@@ -7,21 +7,35 @@ using System.Text;
 
 namespace Lab.Heroes.Core.Tests.DomainObjects
 {
-    class MockHero : IHero
+    class MockHero : AbstractObjectBase, IHero
     {
         public MockHero()
         {
 
         }
         
-        private IJsonSerializer jsonSerializer;
-
-        public IJsonSerializer Json
+        public string Name
         {
-            get { return jsonSerializer; }
+            get
+            {
+                throw new NotImplementedException();
+            }
             set
             {
-                jsonSerializer = value;
+                throw new NotImplementedException();
+            }
+        }
+
+
+        public string SecretBase
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
             }
         }
     }

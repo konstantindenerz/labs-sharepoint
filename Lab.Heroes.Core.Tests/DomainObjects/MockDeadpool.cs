@@ -8,20 +8,34 @@ using System.Text;
 
 namespace Lab.Heroes.Core.Tests.DomainObjects
 {
-    class MockDeadpool : ISpecialHero
+    class MockDeadpool : AbstractObjectBase, ISpecialHero
     {
-        public MockDeadpool(){
+        public MockDeadpool()
+        {
 
         }
-        
-        private IJsonSerializer jsonSerializer;
 
-        public IJsonSerializer Json
+        public string Name
         {
-            get { return jsonSerializer; }
+            get
+            {
+                return Get<string>("name");
+            }
             set
             {
-                jsonSerializer = value;
+                Set("name", value);
+            }
+        }
+
+        public string SecretBase
+        {
+            get
+            {
+                return Get<string>("secretBase");
+            }
+            set
+            {
+                Set("secretBase", value);
             }
         }
     }

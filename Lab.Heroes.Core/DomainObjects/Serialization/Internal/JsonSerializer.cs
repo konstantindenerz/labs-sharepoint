@@ -1,27 +1,31 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Lab.Heroes.Core.Utility;
 
 namespace Lab.Heroes.Core.DomainObjects.Serialization.Internal
 {
     public class JsonSerializer : AbstractJsonSerializer
     {
 
-        public JsonSerializer(IJsonSerializable jsonSerializable)
-            : base(jsonSerializable)
+        public JsonSerializer(IObjectBase objectBase)
+            : base(objectBase)
         {
-
+            
         }
 
         public override void Load(string jsonString)
         {
-            throw new NotImplementedException();
+            var values = JsonConvert.DeserializeObject<IDictionary<string, object>>(jsonString);
+            ObjectBase.GetValues().Merge(values);
         }
 
         public override string AsString()
         {
-            throw new NotImplementedException();
+            var values = ObjectBase.GetValues();
+            return JsonConvert.SerializeObject(values);
         }
     }
 }

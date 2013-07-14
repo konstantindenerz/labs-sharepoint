@@ -7,24 +7,24 @@ namespace Lab.Heroes.Core.DomainObjects.Serialization
 {
     public abstract class AbstractJsonSerializer : IJsonSerializer
     {
-        private IJsonSerializable jsonSerializable;
-        protected IJsonSerializable JsonSerializable { get { return jsonSerializable; } }
+        private IObjectBase objectBase;
+        protected IObjectBase ObjectBase { get { return objectBase; } }
 
         /// <summary>
         /// Constructor without parameters should not be supported.
         /// </summary>
         private AbstractJsonSerializer()
         {
-
+            
         }
 
         /// <summary>
         /// This constructor should be used to get an instance to serializable object. This object should be used in serialization.
         /// </summary>
-        /// <param name="jsonSerializable"></param>
-        public AbstractJsonSerializer(IJsonSerializable jsonSerializable)
+        /// <param name="objectBase"></param>
+        public AbstractJsonSerializer(IObjectBase objectBase)
         {
-            this.jsonSerializable = jsonSerializable;
+            this.objectBase = objectBase;
         }
 
         /// <summary>

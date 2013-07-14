@@ -21,28 +21,28 @@ namespace Lab.Heroes.Core.Tests.DomainObjects
             {
                 case EMockHeroFactoryStrategy.deadPoolWithMockSerializer:
                     var deadpool = new MockDeadpool();
-                    serializer = new MockJsonSerializer(result);
+                    serializer = new MockJsonSerializer(deadpool);
                     deadpool.Json = serializer;
                     result = deadpool;
                     break;
 
                 case EMockHeroFactoryStrategy.deadPoolWithSerializer:
                     var otherDeadpool = new MockDeadpool();
-                    serializer = new JsonSerializer(result);
+                    serializer = new JsonSerializer(otherDeadpool);
                     otherDeadpool.Json = serializer;
                     result = otherDeadpool;
                     break;
 
                 case EMockHeroFactoryStrategy.mockObject:
                     var mockObject = new MockObject();
-                    serializer = new JsonSerializer(result);
+                    serializer = new JsonSerializer(mockObject);
                     mockObject.Json = serializer;
                     result = mockObject;
                     break;
 
                 case EMockHeroFactoryStrategy.mockHero:
                     var mockHero = new MockHero();
-                    serializer = new JsonSerializer(result);
+                    serializer = new JsonSerializer(mockHero);
                     mockHero.Json = serializer;
                     result = mockHero;
                     break;

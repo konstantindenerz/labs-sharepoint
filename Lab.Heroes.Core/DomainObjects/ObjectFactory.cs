@@ -15,12 +15,12 @@ namespace Lab.Heroes.Core.DomainObjects
         /// <typeparam name="TTarget"></typeparam>
         /// <param name="name">An identifier that should be used to create an object.</param>
         /// <returns></returns>
-        public static IObjectBase Create<TTarget>(string name)
+        public static TTarget Create<TTarget>(string name) where TTarget : IObjectBase
         {
             IObjectFactoryStrategy strategy;
             var key = FindKey<TTarget>();
             strategy = factoryStrategies[key];
-            return strategy.Execute(name);
+            return (TTarget)strategy.Execute(name);
         }
 
 
