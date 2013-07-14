@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DomainObjects\Serialization\ISpecialHero.cs" />
-    <Compile Include="DomainObjects\Serialization\MockDeadpool.cs" />
-    <Compile Include="DomainObjects\Serialization\MockHeroFactoryStrategy.cs" />
+    <Compile Include="DomainObjects\EMockHeroFactoryStrategy.cs" />
+    <Compile Include="DomainObjects\ISpecialHero.cs" />
+    <Compile Include="DomainObjects\MockDeadpool.cs" />
+    <Compile Include="DomainObjects\MockHero.cs" />
+    <Compile Include="DomainObjects\MockHeroFactoryStrategy.cs" />
+    <Compile Include="DomainObjects\MockObject.cs" />
     <Compile Include="DomainObjects\Serialization\MockJsonSerializer.cs" />
-    <Compile Include="DomainObjects\Serialization\TestHeroFactory.cs" />
+    <Compile Include="DomainObjects\TestHeroFactory.cs" />
     <Compile Include="DomainObjects\Serialization\TestHeroSerailization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

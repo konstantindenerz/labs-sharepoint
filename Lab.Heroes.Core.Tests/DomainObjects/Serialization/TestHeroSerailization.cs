@@ -10,19 +10,20 @@ namespace Lab.Heroes.Core.Tests.DomainObjects.Serialization
     [TestFixture]
     class TestHeroJsonSerailization
     {
-        private string heroName = "Deadpool";
 
         [SetUp]
         public void SetUp()
         {
-            ObjectFactory.Register<IHero>(new MockHeroFactoryStrategy());
+            
         }
 
         [Test]
-        public void ToJson()
+        public void ToJsonWithMockSerializer()
         {
+            
             // Build 
-            IObjectBase hero = ObjectFactory.Create<ISpecialHero>(heroName);
+            ObjectFactory.Register<IHero>(new MockHeroFactoryStrategy());
+            IObjectBase hero = ObjectFactory.Create<IHero>(EMockHeroFactoryStrategy.deadPoolWithMockSerializer.ToString());
             // Process
             var jsonString = hero.Json.AsString();
             // Check

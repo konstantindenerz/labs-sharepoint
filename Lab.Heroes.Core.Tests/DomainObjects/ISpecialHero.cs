@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Lab.Heroes.Core.Tests.DomainObjects.Serialization
+namespace Lab.Heroes.Core.Tests.DomainObjects
 {
     interface ISpecialHero : IHero
     {

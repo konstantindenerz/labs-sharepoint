@@ -45,11 +45,11 @@
     <Compile Include="DomainObjects\Serialization\AbstractJsonSerializer.cs" />
     <Compile Include="DomainObjects\Serialization\IJsonSerializable.cs" />
     <Compile Include="DomainObjects\Serialization\IJsonSerializer.cs" />
+    <Compile Include="DomainObjects\Serialization\Internal\JsonSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DomainObjects\Internal\" />
-    <Folder Include="DomainObjects\Serialization\Internal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
