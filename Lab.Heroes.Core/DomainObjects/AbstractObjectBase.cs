@@ -35,7 +35,10 @@ namespace Lab.Heroes.Core.DomainObjects
 
         public IJsonSerializer Json
         {
-            get { return jsonSerializer; }
+            get
+            {
+                return jsonSerializer;
+            }
             set
             {
                 jsonSerializer = value;

@@ -7,6 +7,6 @@ namespace Lab.Heroes.Core.DomainObjects.Serialization
 {
     public interface IJsonSerializable
     {
-        IJsonSerializer Json { get; }
+        IJsonSerializer Json { get; set; }
     }
 }

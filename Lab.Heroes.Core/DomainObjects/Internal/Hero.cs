@@ -1,18 +1,20 @@
-﻿using Lab.Heroes.Core.DomainObjects;
-using Lab.Heroes.Core.DomainObjects.Serialization;
-using Lab.Heroes.Core.Tests.DomainObjects.Serialization;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Lab.Heroes.Core.Tests.DomainObjects
+namespace Lab.Heroes.Core.DomainObjects.Internal
 {
-    class MockDeadpool : AbstractObjectBase, ISpecialHero
+    public class Hero: AbstractObjectBase, IHero
     {
-        public MockDeadpool()
+        public Hero()
         {
 
+        }
+
+        public Hero(string id)
+        {
+            this.Id = id;
         }
 
         public string Name
@@ -43,11 +45,11 @@ namespace Lab.Heroes.Core.Tests.DomainObjects
         {
             get
             {
-                throw new NotImplementedException();
+                return Get<string>("id");
             }
             set
             {
-                throw new NotImplementedException();
+                Set("id", value);
             }
         }
     }

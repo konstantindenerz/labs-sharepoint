@@ -38,5 +38,17 @@ namespace Lab.Heroes.Core.Tests.DomainObjects
                 throw new NotImplementedException();
             }
         }
+
+        public string Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

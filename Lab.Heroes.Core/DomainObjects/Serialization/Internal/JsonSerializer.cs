@@ -27,5 +27,10 @@ namespace Lab.Heroes.Core.DomainObjects.Serialization.Internal
             var values = ObjectBase.GetValues();
             return JsonConvert.SerializeObject(values);
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
