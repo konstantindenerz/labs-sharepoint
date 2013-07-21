@@ -29,6 +29,7 @@ namespace Lab.Heroes.Core.Di
         private static void CreateKernelInstance()
         {
             kernel = new StandardKernel();
+            //TODO Move this code to seperate modules...
             kernel.Bind(typeof(IObjectAdministrationService<>)).To(typeof(GenericObjectAdministrationService<>));
             kernel.Bind(typeof(IObjectDao<>)).To(typeof(GenericObjectDao<>));
             OtherStuff();
