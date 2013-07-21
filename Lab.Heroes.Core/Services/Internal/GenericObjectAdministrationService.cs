@@ -2,6 +2,7 @@
 using Lab.Heroes.Core.DomainObjects;
 using Lab.Heroes.Core.DomainObjects.Serialization;
 using Lab.Heroes.Core.DomainObjects.Serialization.Internal;
+using Ninject;
 
 namespace Lab.Heroes.Core.Services.Internal
 {
@@ -13,6 +14,7 @@ namespace Lab.Heroes.Core.Services.Internal
             Dao = dao;
         }
 
+        [Inject]
         public IObjectDao<TObject> Dao { get; set; }
 
         public TObject GetBy(string id)

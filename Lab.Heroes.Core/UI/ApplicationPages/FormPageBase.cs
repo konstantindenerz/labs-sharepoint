@@ -6,6 +6,7 @@ using Lab.Heroes.Core.DomainObjects;
 using Lab.Heroes.Core.Services;
 using Lab.Heroes.Core.Services.Internal;
 using Microsoft.SharePoint.WebControls;
+using Ninject;
 
 namespace Lab.Heroes.Core.UI.ApplicationPages
 {
@@ -13,12 +14,10 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
     {
         public FormPageBase()
         {
-            //TODO Move this configuration to another file
-            var dao = new GenericObjectDao<TObject>();
-            Service = new GenericObjectAdministrationService<TObject>(dao);
+            Di.DiHelper.Kernel.Inject(this);
         }
 
-        private HtmlInputText jsonBridge = new HtmlInputText("hidden");
+        private readonly HtmlInputText jsonBridge = new HtmlInputText("hidden");
 
         protected override void CreateChildControls()
         {
@@ -33,7 +32,8 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
 
         /// <summary>
         ///     This service should be used to manage objects corresponding to TObject.
-        /// </summary>
+        /// </summary
+        [Inject]
         public IObjectAdministrationService<TObject> Service { get; set; }
 
         /// <summary>
