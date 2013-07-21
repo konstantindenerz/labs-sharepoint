@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Lab.Heroes.Core.DomainObjects.Serialization
+﻿namespace Lab.Heroes.Core.DomainObjects.Serialization
 {
     public abstract class AbstractJsonSerializer : IJsonSerializer
     {
         private IObjectBase objectBase;
-        protected IObjectBase ObjectBase { get { return objectBase; } }
 
-        /// <summary>
-        /// Constructor without parameters should not be supported.
-        /// </summary>
-        private AbstractJsonSerializer()
+        protected IObjectBase ObjectBase
         {
-            
+            get { return objectBase; }
         }
 
         /// <summary>
-        /// This constructor should be used to get an instance to serializable object. This object should be used in serialization.
+        ///     Constructor without parameters should not be supported.
+        /// </summary>
+        private AbstractJsonSerializer()
+        {
+        }
+
+        /// <summary>
+        ///     This constructor should be used to get an instance to serializable object. This object should be used in
+        ///     serialization.
         /// </summary>
         /// <param name="objectBase"></param>
         public AbstractJsonSerializer(IObjectBase objectBase)
@@ -28,13 +27,13 @@ namespace Lab.Heroes.Core.DomainObjects.Serialization
         }
 
         /// <summary>
-        /// Fills the serializable object with data from given JSON string.
+        ///     Fills the serializable object with data from given JSON string.
         /// </summary>
         /// <param name="jsonString"></param>
         public abstract void Load(string jsonString);
 
         /// <summary>
-        /// Returns the serializable object as string.
+        ///     Returns the serializable object as string.
         /// </summary>
         /// <returns></returns>
         public abstract string AsString();

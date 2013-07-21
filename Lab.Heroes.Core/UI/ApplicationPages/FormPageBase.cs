@@ -1,16 +1,11 @@
-﻿using Lab.Heroes.Core.Dao.Internal;
-using Lab.Heroes.Core.DomainObjects;
-using Lab.Heroes.Core.DomainObjects.Serialization;
-using Lab.Heroes.Core.Services;
-using Lab.Heroes.Core.Services.Internal;
-using Microsoft.SharePoint.Utilities;
-using Microsoft.SharePoint.WebControls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Web;
 using System.Web.UI.HtmlControls;
+using Lab.Heroes.Core.Dao.Internal;
+using Lab.Heroes.Core.DomainObjects;
+using Lab.Heroes.Core.Services;
+using Lab.Heroes.Core.Services.Internal;
+using Microsoft.SharePoint.WebControls;
 
 namespace Lab.Heroes.Core.UI.ApplicationPages
 {
@@ -23,12 +18,12 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
             Service = new GenericObjectAdministrationService<TObject>(dao);
         }
 
-        HtmlInputText jsonBridge = new HtmlInputText("hidden");
+        private HtmlInputText jsonBridge = new HtmlInputText("hidden");
 
         protected override void CreateChildControls()
         {
             base.CreateChildControls();
-            this.Controls.Add(jsonBridge);
+            Controls.Add(jsonBridge);
         }
 
         protected override void OnPreLoad(EventArgs e)
@@ -37,21 +32,21 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
         }
 
         /// <summary>
-        /// This service should be used to manage objects corresponding to TObject.
+        ///     This service should be used to manage objects corresponding to TObject.
         /// </summary>
         public IObjectAdministrationService<TObject> Service { get; set; }
 
         /// <summary>
-        /// This methods uses parameter from query string to load an item. 
-        /// This item will be serialized to JSON. 
-        /// The JSON string should be transported in the bridge.
+        ///     This methods uses parameter from query string to load an item.
+        ///     This item will be serialized to JSON.
+        ///     The JSON string should be transported in the bridge.
         /// </summary>
         protected void LoadObject()
         {
-            if (!this.IsPostBack)
+            if (!IsPostBack)
             {
                 var idParameter = "id";
-                var parameters = HttpUtility.ParseQueryString(this.ClientQueryString);
+                var parameters = HttpUtility.ParseQueryString(ClientQueryString);
                 if (!String.IsNullOrEmpty(parameters[idParameter]))
                 {
                     var id = parameters[idParameter];

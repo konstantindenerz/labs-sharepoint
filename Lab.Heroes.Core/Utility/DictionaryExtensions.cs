@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Lab.Heroes.Core.Utility
 {
@@ -14,6 +11,5 @@ namespace Lab.Heroes.Core.Utility
                 target[element.Key] = element.Value;
             }
         }
-
     }
 }
