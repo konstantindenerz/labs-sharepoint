@@ -8,7 +8,7 @@ namespace Lab.Heroes.Administration.Layouts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var test = 42;
+
         }
     }
 }
