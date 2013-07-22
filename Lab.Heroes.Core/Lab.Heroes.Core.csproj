@@ -56,12 +56,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\Adapter\IDataAdapter.cs" />
+    <Compile Include="Dao\Adapter\IDataAssembler.cs" />
+    <Compile Include="Dao\Adapter\Internal\AbstractDataAdapter.cs" />
+    <Compile Include="Dao\Adapter\Internal\GenericDataAssembler.cs" />
+    <Compile Include="Dao\Adapter\Internal\HeroNameAdapter.cs" />
+    <Compile Include="Dao\Adapter\Internal\HeroSecretBaseAdapter.cs" />
+    <Compile Include="Dao\Adapter\Internal\OtherUnusedAdapter.cs" />
+    <Compile Include="Dao\IListItemDispatcher.cs" />
     <Compile Include="Dao\Internal\GenericObjectDao.cs" />
+    <Compile Include="Dao\Internal\MockListItemDispatcher.cs" />
     <Compile Include="Dao\IObjectDao.cs" />
     <Compile Include="Di\DiHelper.cs" />
     <Compile Include="Di\KernelConfiguration.cs" />
     <Compile Include="DomainObjects\AbstractObjectBase.cs" />
     <Compile Include="DomainObjects\IHero.cs" />
+    <Compile Include="DomainObjects\IDesperado.cs" />
     <Compile Include="DomainObjects\Internal\Hero.cs" />
     <Compile Include="DomainObjects\Internal\HeroFactoryStrategy.cs" />
     <Compile Include="DomainObjects\ObjectFactory.cs" />

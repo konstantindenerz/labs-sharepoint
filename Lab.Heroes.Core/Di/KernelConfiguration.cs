@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Lab.Heroes.Core.Dao;
+using Lab.Heroes.Core.Dao.Adapter;
+using Lab.Heroes.Core.Dao.Adapter.Internal;
 using Lab.Heroes.Core.Dao.Internal;
 using Lab.Heroes.Core.DomainObjects;
 using Lab.Heroes.Core.DomainObjects.Internal;
@@ -32,12 +34,17 @@ namespace Lab.Heroes.Core.Di
             //TODO Move this code to seperate modules...
             kernel.Bind(typeof(IObjectAdministrationService<>)).To(typeof(GenericObjectAdministrationService<>));
             kernel.Bind(typeof(IObjectDao<>)).To(typeof(GenericObjectDao<>));
+            kernel.Bind(typeof(IDataAssembler<>)).To(typeof(GenericDataAssembler<>));
+            kernel.Bind(typeof(IDataAdapter<>)).To(typeof(HeroSecretBaseAdapter<>));
+            kernel.Bind(typeof(IDataAdapter<>)).To(typeof(OtherUnusedAdapter<>));
+            kernel.Bind(typeof(IDataAdapter<>)).To(typeof(HeroNameAdapter<>));
+            kernel.Bind(typeof(IListItemDispatcher<>)).To(typeof(MockListItemDispatcher<>));
             OtherStuff();
         }
 
         private static void OtherStuff()
         {
-            ObjectFactory.Register<Hero>(new HeroFactoryStrategy());
+            ObjectFactory.Register<IHero>(new HeroFactoryStrategy());
         }
     }
 

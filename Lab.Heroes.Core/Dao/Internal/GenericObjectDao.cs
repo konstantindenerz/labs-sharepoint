@@ -1,27 +1,30 @@
 ﻿using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using Lab.Heroes.Core.Dao.Adapter;
 using Lab.Heroes.Core.DomainObjects;
 using Lab.Heroes.Core.Utility;
+using Ninject;
 
 namespace Lab.Heroes.Core.Dao.Internal
 {
     public class GenericObjectDao<TObject> : IObjectDao<TObject> where TObject : IObjectBase
     {
+        [Inject]
+        public IDataAssembler<TObject> Assembler { get; set; }
+
+        [Inject]
+        public IListItemDispatcher<TObject> ListItemDispatcher { get; set; }
+
         public TObject LoadBy(string id)
         {
-            var currentObject = ObjectFactory.Create<TObject>(id);
-            Fill(currentObject);
-            return currentObject;
+            return Assembler.GetById(id);
         }
 
-        private void Fill(TObject currentObject)
+        public void Save(TObject data)
         {
-            //This code should call a data base adapter to get data.
-            // this is an example to how merge existing instance with data from database
-            currentObject.GetValues().Merge(new Dictionary<string, object>
-            {
-                {"name", "Deadpool"},
-                {"secredBase", "Unknown"}
-            });
+            Assembler.Save(data);
+            ListItemDispatcher.Dispatch(data);
         }
+
     }
 }
