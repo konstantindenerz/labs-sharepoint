@@ -1,19 +1,14 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Lab.Heroes.Core.Utility;
+using Newtonsoft.Json;
 
 namespace Lab.Heroes.Core.DomainObjects.Serialization.Internal
 {
     public class JsonSerializer : AbstractJsonSerializer
     {
-
         public JsonSerializer(IObjectBase objectBase)
             : base(objectBase)
         {
-            
         }
 
         public override void Load(string jsonString)
@@ -26,11 +21,6 @@ namespace Lab.Heroes.Core.DomainObjects.Serialization.Internal
         {
             var values = ObjectBase.GetValues();
             return JsonConvert.SerializeObject(values);
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
         }
     }
 }

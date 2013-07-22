@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Lab.Heroes.Core.DomainObjects
+﻿namespace Lab.Heroes.Core.DomainObjects
 {
-    public interface IHero: IObjectBase
+    public interface IHero : IObjectBase
     {
         string Id { get; set; }
         string Name { get; set; }

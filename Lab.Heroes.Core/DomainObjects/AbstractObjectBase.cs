@@ -1,22 +1,18 @@
-﻿using Lab.Heroes.Core.DomainObjects.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using Lab.Heroes.Core.DomainObjects.Serialization;
 
 namespace Lab.Heroes.Core.DomainObjects
 {
     public abstract class AbstractObjectBase : IObjectBase
     {
-
-        IDictionary<string, object> values = new Dictionary<string, object>();
+        private IDictionary<string, object> values = new Dictionary<string, object>();
 
         public TResult Get<TResult>(string property) where TResult : class
         {
             TResult result = default(TResult);
             if (values.ContainsKey(property))
             {
-                result = (TResult)values[property];
+                result = (TResult) values[property];
             }
             return result;
         }
@@ -35,15 +31,8 @@ namespace Lab.Heroes.Core.DomainObjects
 
         public IJsonSerializer Json
         {
-            get
-            {
-                return jsonSerializer;
-            }
-            set
-            {
-                jsonSerializer = value;
-            }
+            get { return jsonSerializer; }
+            set { jsonSerializer = value; }
         }
-
     }
 }
