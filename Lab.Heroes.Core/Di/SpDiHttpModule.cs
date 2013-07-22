@@ -25,7 +25,7 @@ namespace Lab.Heroes.Core.Di
 
         public void Dispose()
         {
-
+            DiHelper.Kernel.Dispose();
         }
     }
 }
