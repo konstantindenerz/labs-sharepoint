@@ -31,7 +31,7 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
 
         /// <summary>
         ///     This service should be used to manage objects corresponding to TObject.
-        /// </summary
+        /// </summary>
         [Inject]
         public IObjectAdministrationService<TObject> Service { get; set; }
 
@@ -44,12 +44,12 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
         {
             if (!IsPostBack)
             {
-                var idParameter = "id";
+                const string idParameter = "id";
                 var parameters = HttpUtility.ParseQueryString(ClientQueryString);
                 if (!String.IsNullOrEmpty(parameters[idParameter]))
                 {
                     var id = parameters[idParameter];
-                    TObject currentObject = Service.GetBy(id);
+                    var currentObject = Service.GetBy(id);
                     jsonBridge.Value = currentObject.Json.AsString();
                 }
             }
