@@ -54,5 +54,19 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
                 }
             }
         }
+
+        protected void Handle(string messageKey)
+        {
+            // TODO implement this method
+            var exception = new Exception(/* res get value for messageKey */);
+            Handle(exception);
+        }
+
+        protected void Handle(Exception exception)
+        {
+            // TODO implement this method
+            // log error
+            // redirect to hint page and show message
+        }
     }
 }
