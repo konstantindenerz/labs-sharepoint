@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI.HtmlControls;
-using Lab.Heroes.Core.Dao.Internal;
+using Lab.Heroes.Core.Di;
 using Lab.Heroes.Core.DomainObjects;
 using Lab.Heroes.Core.Services;
-using Lab.Heroes.Core.Services.Internal;
 using Microsoft.SharePoint.WebControls;
 using Ninject;
 
@@ -14,7 +13,7 @@ namespace Lab.Heroes.Core.UI.ApplicationPages
     {
         public FormPageBase()
         {
-            Di.DiHelper.Kernel.Inject(this);
+            DiHelper.Kernel.Inject(this);
         }
 
         private readonly HtmlInputText jsonBridge = new HtmlInputText("hidden");
