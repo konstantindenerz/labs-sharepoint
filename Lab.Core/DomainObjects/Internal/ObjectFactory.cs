@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ninject;
 
-namespace Lab.Core.DomainObjects
+namespace Lab.Core.DomainObjects.Internal
 {
-    public static class ObjectFactory
+    public class ObjectFactory : IObjectFactory
     {
-        private static IDictionary<Type, IObjectFactoryStrategy> factoryStrategies =
-            new Dictionary<Type, IObjectFactoryStrategy>();
+        public ObjectFactory()
+        {
+            Strategies = new Dictionary<Type, IObjectFactoryStrategy>();
+        }
+
+        [Inject]
+        public IDictionary<Type, IObjectFactoryStrategy> Strategies { get; set; }
 
         /// <summary>
         ///     Returns an object matched the given type TTarget. Uses the first match of type parameter.
@@ -14,11 +20,11 @@ namespace Lab.Core.DomainObjects
         /// <typeparam name="TTarget"></typeparam>
         /// <param name="name">An identifier that should be used to create an object.</param>
         /// <returns></returns>
-        public static TTarget Create<TTarget>(string name) where TTarget : IObjectBase
+        public TTarget Create<TTarget>(string name) where TTarget : IObjectBase
         {
             IObjectFactoryStrategy strategy;
             var key = FindKey<TTarget>();
-            strategy = factoryStrategies[key];
+            strategy = Strategies[key];
             return (TTarget) strategy.Execute(name);
         }
 
@@ -28,10 +34,10 @@ namespace Lab.Core.DomainObjects
         /// </summary>
         /// <typeparam name="TTarget"></typeparam>
         /// <returns></returns>
-        private static Type FindKey<TTarget>()
+        private Type FindKey<TTarget>()
         {
             Type result = null;
-            foreach (Type type in factoryStrategies.Keys)
+            foreach (Type type in Strategies.Keys)
             {
                 if (type == typeof (TTarget))
                 {
@@ -52,24 +58,24 @@ namespace Lab.Core.DomainObjects
         /// </summary>
         /// <typeparam name="TTarget">Ignored registration if a strategy with for same type is registered.</typeparam>
         /// <param name="strategy"></param>
-        public static void Register<TTarget>(IObjectFactoryStrategy strategy) where TTarget : IObjectBase
+        public void Register<TTarget>(IObjectFactoryStrategy strategy) where TTarget : IObjectBase
         {
             var type = typeof (TTarget);
-            if (!factoryStrategies.Keys.Contains(type))
+            if (!Strategies.Keys.Contains(type))
             {
-                factoryStrategies.Add(type, strategy);
+                Strategies.Add(type, strategy);
             }
         }
 
-        public static void Unregister<TTarget>()
+        public void Unregister<TTarget>()
         {
             var key = FindKey<TTarget>();
-            factoryStrategies.Remove(key);
+            Strategies.Remove(key);
         }
 
-        public static void Clear()
+        public void Clear()
         {
-            factoryStrategies.Clear();
+            Strategies.Clear();
         }
     }
 }

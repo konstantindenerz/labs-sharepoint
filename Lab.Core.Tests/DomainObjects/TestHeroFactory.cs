@@ -1,5 +1,6 @@
 ﻿using System;
 using Lab.Core.DomainObjects;
+using Lab.Core.DomainObjects.Internal;
 using Lab.Heroes.Core.DomainObjects;
 using NUnit.Framework;
 
@@ -8,10 +9,11 @@ namespace Lab.Core.Tests.DomainObjects
     [TestFixture]
     class TestHeroFactory
     {
+        public IObjectFactory ObjectFactory { get; set; }
         [SetUp]
         public void SetUp()
         {
-            ObjectFactory.Clear();
+            ObjectFactory = new ObjectFactory();
         }
       
         [Test]

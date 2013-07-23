@@ -2,7 +2,7 @@
 
 namespace Lab.Heroes.Core.DomainObjects.Internal
 {
-    public class HeroFactoryStrategy : IObjectFactoryStrategy
+    public class HeroFactoryStrategy : IHeroFactoryStrategy
     {
         public IObjectBase Execute(string id)
         {

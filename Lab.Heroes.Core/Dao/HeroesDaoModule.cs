@@ -18,7 +18,8 @@ namespace Lab.Heroes.Core.Dao
             Bind(typeof(IDataAdapter<>)).To(typeof(HeroSecretBaseAdapter<>));
             Bind(typeof(IDataAdapter<>)).To(typeof(OtherUnusedAdapter<>));
             Bind(typeof(IDataAdapter<>)).To(typeof(HeroNameAdapter<>));
-            ObjectFactory.Register<IHero>(new HeroFactoryStrategy());
+            Bind<IHeroFactoryStrategy>().To<HeroFactoryStrategy>();
+            Bind<IDictionary<Type, IObjectFactoryStrategy>>().ToProvider<HeroFactoryStrategyProvider>();
         }
     }
 }

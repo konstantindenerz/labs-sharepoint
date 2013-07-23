@@ -1,6 +1,8 @@
 ﻿using Lab.Core.Dao.Adapter;
 using Lab.Core.Dao.Adapter.Internal;
 using Lab.Core.Dao.Internal;
+using Lab.Core.DomainObjects;
+using Lab.Core.DomainObjects.Internal;
 using Ninject.Modules;
 
 namespace Lab.Core.Dao
@@ -9,9 +11,10 @@ namespace Lab.Core.Dao
     {
         public override void Load()
         {
-            Bind(typeof(IObjectDao<>)).To(typeof(GenericObjectDao<>));
-            Bind(typeof(IDataAssembler<>)).To(typeof(GenericDataAssembler<>));
-            Bind(typeof(IListItemDispatcher<>)).To(typeof(MockListItemDispatcher<>));
+            Bind(typeof (IObjectDao<>)).To(typeof (GenericObjectDao<>));
+            Bind(typeof (IDataAssembler<>)).To(typeof (GenericDataAssembler<>));
+            Bind(typeof (IListItemDispatcher<>)).To(typeof (MockListItemDispatcher<>));
+            Bind<IObjectFactory>().To<ObjectFactory>();
         }
     }
 }

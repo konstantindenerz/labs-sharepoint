@@ -50,8 +50,10 @@
     <Compile Include="Dao\Adapter\Internal\HeroSecretBaseAdapter.cs" />
     <Compile Include="Dao\Adapter\Internal\OtherUnusedAdapter.cs" />
     <Compile Include="Dao\HeroesDaoModule.cs" />
+    <Compile Include="Dao\HeroFactoryStrategyProvider.cs" />
     <Compile Include="DomainObjects\IDesperado.cs" />
     <Compile Include="DomainObjects\IHero.cs" />
+    <Compile Include="DomainObjects\IHeroFactoryStrategy.cs" />
     <Compile Include="DomainObjects\Internal\Hero.cs" />
     <Compile Include="DomainObjects\Internal\HeroFactoryStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

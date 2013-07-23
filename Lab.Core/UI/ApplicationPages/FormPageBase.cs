@@ -58,7 +58,7 @@ namespace Lab.Core.UI.ApplicationPages
         protected void Handle(string messageKey)
         {
             // TODO implement this method
-            var exception = new Exception(/* res get value for messageKey */);
+            var exception = new Exception( /* res get value for messageKey */);
             Handle(exception);
         }
 

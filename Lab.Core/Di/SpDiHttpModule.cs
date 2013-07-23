@@ -4,13 +4,13 @@ using System.Web;
 namespace Lab.Core.Di
 {
     /// <summary>
-    /// This HTTP module should be used to create a container for dependency injection.
+    ///     This HTTP module should be used to create a container for dependency injection.
     /// </summary>
     public class SpDiHttpModule : IHttpModule, IDisposable
     {
         public void Init(HttpApplication context)
         {
-            InitKernel(); 
+            InitKernel();
         }
 
         private void InitKernel()
@@ -19,7 +19,6 @@ namespace Lab.Core.Di
             {
                 DiHelper.Kernel = KernelConfiguration.GetDefault();
             }
-            
         }
 
         public void Dispose()

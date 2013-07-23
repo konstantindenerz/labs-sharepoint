@@ -22,6 +22,5 @@ namespace Lab.Core.Dao.Internal
             Assembler.Save(data);
             ListItemDispatcher.Dispatch(data);
         }
-
     }
 }

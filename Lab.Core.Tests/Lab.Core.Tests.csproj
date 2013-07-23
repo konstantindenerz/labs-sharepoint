@@ -61,7 +61,7 @@
       <Name>Lab.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lab.Heroes.Core\Lab.Heroes.Core.csproj">
-      <Project>{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}</Project>
+      <Project>{57e4cc1b-c8f9-4ff1-980d-fcac11da1701}</Project>
       <Name>Lab.Heroes.Core</Name>
     </ProjectReference>
   </ItemGroup>
