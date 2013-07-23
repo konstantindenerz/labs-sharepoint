@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Core", "Lab.Core\Lab.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Core.Tests", "Lab.Core.Tests\Lab.Core.Tests.csproj", "{1B13E2D1-42B1-45C2-B594-A9FF0BDEEE21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Heroes.Core", "Lab.Heroes.Core\Lab.Heroes.Core.csproj", "{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,12 +35,17 @@ Global
 		{1B13E2D1-42B1-45C2-B594-A9FF0BDEEE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B13E2D1-42B1-45C2-B594-A9FF0BDEEE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B13E2D1-42B1-45C2-B594-A9FF0BDEEE21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7C627FE7-D70E-4B75-89B4-A7EAA4EAEED1} = {88B9BE0A-1AEE-4CF4-922F-3FCB02071927}
+		{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701} = {88B9BE0A-1AEE-4CF4-922F-3FCB02071927}
 		{1B13E2D1-42B1-45C2-B594-A9FF0BDEEE21} = {9BEFBB64-230A-45F6-8DCA-4EEFC010C283}
 		{A1B626B7-00D2-4B34-9F05-28D58908040B} = {FC97556B-928D-4853-B89C-61DA61D1A9BE}
 	EndGlobalSection

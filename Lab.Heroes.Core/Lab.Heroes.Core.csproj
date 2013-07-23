@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B13E2D1-42B1-45C2-B594-A9FF0BDEEE21}</ProjectGuid>
+    <ProjectGuid>{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lab.Core.Tests</RootNamespace>
-    <AssemblyName>Lab.Core.Tests</AssemblyName>
+    <RootNamespace>Lab.Heroes.Core</RootNamespace>
+    <AssemblyName>Lab.Heroes.Core</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,30 +30,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>test.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\Libs\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Di\TestSpDiHttpModule.cs" />
-    <Compile Include="DomainObjects\EMockHeroFactoryStrategy.cs" />
-    <Compile Include="DomainObjects\ISpecialHero.cs" />
-    <Compile Include="DomainObjects\MockDeadpool.cs" />
-    <Compile Include="DomainObjects\MockHero.cs" />
-    <Compile Include="DomainObjects\MockHeroFactoryStrategy.cs" />
-    <Compile Include="DomainObjects\MockObject.cs" />
-    <Compile Include="DomainObjects\Serialization\MockJsonSerializer.cs" />
-    <Compile Include="DomainObjects\TestHeroFactory.cs" />
-    <Compile Include="DomainObjects\Serialization\TestHeroSerailization.cs" />
+    <Compile Include="Dao\Adapter\Internal\HeroNameAdapter.cs" />
+    <Compile Include="Dao\Adapter\Internal\HeroSecretBaseAdapter.cs" />
+    <Compile Include="Dao\Adapter\Internal\OtherUnusedAdapter.cs" />
+    <Compile Include="DomainObjects\IDesperado.cs" />
+    <Compile Include="DomainObjects\IHero.cs" />
+    <Compile Include="DomainObjects\Internal\Hero.cs" />
+    <Compile Include="DomainObjects\Internal\HeroFactoryStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,10 +60,9 @@
       <Project>{a1b626b7-00d2-4b34-9f05-28d58908040b}</Project>
       <Name>Lab.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lab.Heroes.Core\Lab.Heroes.Core.csproj">
-      <Project>{57E4CC1B-C8F9-4FF1-980D-FCAC11DA1701}</Project>
-      <Name>Lab.Heroes.Core</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

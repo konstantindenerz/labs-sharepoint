@@ -1,6 +1,8 @@
-﻿using Lab.Core.DomainObjects;
+﻿using Lab.Core.Dao.Adapter.Internal;
+using Lab.Core.DomainObjects;
+using Lab.Heroes.Core.DomainObjects;
 
-namespace Lab.Core.Dao.Adapter.Internal
+namespace Lab.Heroes.Core.Dao.Adapter.Internal
 {
     public class HeroSecretBaseAdapter<TObject> : AbstractDataAdapter<IHero, TObject> where TObject : IObjectBase
     {

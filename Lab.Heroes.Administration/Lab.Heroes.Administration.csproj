@@ -90,6 +90,10 @@
       <Project>{a1b626b7-00d2-4b34-9f05-28d58908040b}</Project>
       <Name>Lab.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lab.Heroes.Core\Lab.Heroes.Core.csproj">
+      <Project>{57e4cc1b-c8f9-4ff1-980d-fcac11da1701}</Project>
+      <Name>Lab.Heroes.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

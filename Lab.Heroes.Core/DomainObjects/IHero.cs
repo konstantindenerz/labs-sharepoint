@@ -1,4 +1,6 @@
-﻿namespace Lab.Core.DomainObjects
+﻿using Lab.Core.DomainObjects;
+
+namespace Lab.Heroes.Core.DomainObjects
 {
     public interface IHero : IObjectBase
     {

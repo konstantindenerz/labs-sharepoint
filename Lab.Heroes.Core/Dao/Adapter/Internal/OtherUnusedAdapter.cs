@@ -1,7 +1,9 @@
 ﻿using System;
+using Lab.Core.Dao.Adapter.Internal;
 using Lab.Core.DomainObjects;
+using Lab.Heroes.Core.DomainObjects;
 
-namespace Lab.Core.Dao.Adapter.Internal
+namespace Lab.Heroes.Core.Dao.Adapter.Internal
 {
     class OtherUnusedAdapter<TObject> : AbstractDataAdapter<IDesperado, TObject> where TObject : IObjectBase
     {

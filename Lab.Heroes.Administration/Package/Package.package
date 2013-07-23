@@ -4,6 +4,7 @@
     <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Libs\Newtonsoft.Json.dll" />
     <customAssembly location="Ninject.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Libs\Ninject\Ninject.dll" />
     <projectOutputAssembly location="Lab.Core.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Lab.Core\Lab.Core.csproj" />
+    <projectOutputAssembly location="Lab.Heroes.Core.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Lab.Heroes.Core\Lab.Heroes.Core.csproj" />
   </assemblies>
   <projectItems>
     <projectItemReference itemId="290f2f19-5629-4d09-ad35-d0d79a71e276" />

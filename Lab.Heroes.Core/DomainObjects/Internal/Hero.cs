@@ -1,4 +1,6 @@
-﻿namespace Lab.Core.DomainObjects.Internal
+﻿using Lab.Core.DomainObjects;
+
+namespace Lab.Heroes.Core.DomainObjects.Internal
 {
     public class Hero : AbstractObjectBase, IHero
     {
