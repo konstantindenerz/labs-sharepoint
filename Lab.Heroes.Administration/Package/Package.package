@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dee5eb95-d7af-4f2f-a4c9-ea56cbf11f8b" solutionId="dee5eb95-d7af-4f2f-a4c9-ea56cbf11f8b" resetWebServer="false" name="Lab.Heroes.Administration" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <assemblies>
-    <projectOutputAssembly location="Lab.Heroes.Core.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Lab.Heroes.Core\Lab.Heroes.Core.csproj" />
     <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Libs\Newtonsoft.Json.dll" />
     <customAssembly location="Ninject.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Libs\Ninject\Ninject.dll" />
+    <projectOutputAssembly location="Lab.Core.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Lab.Core\Lab.Core.csproj" />
   </assemblies>
   <projectItems>
     <projectItemReference itemId="290f2f19-5629-4d09-ad35-d0d79a71e276" />

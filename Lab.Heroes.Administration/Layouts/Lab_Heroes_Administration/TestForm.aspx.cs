@@ -1,6 +1,6 @@
 ﻿using System;
-using Lab.Heroes.Core.DomainObjects;
-using Lab.Heroes.Core.UI.ApplicationPages;
+using Lab.Core.DomainObjects;
+using Lab.Core.UI.ApplicationPages;
 
 namespace Lab.Heroes.Administration.Layouts
 {

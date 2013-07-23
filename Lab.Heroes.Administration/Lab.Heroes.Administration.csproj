@@ -86,9 +86,9 @@
     <Content Include="Layouts\Lab_Heroes_Administration\TestForm.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lab.Heroes.Core\Lab.Heroes.Core.csproj">
-      <Project>{b83343c5-63db-4d9a-b557-f36549b4eab1}</Project>
-      <Name>Lab.Heroes.Core</Name>
+    <ProjectReference Include="..\Lab.Core\Lab.Core.csproj">
+      <Project>{a1b626b7-00d2-4b34-9f05-28d58908040b}</Project>
+      <Name>Lab.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
