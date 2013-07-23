@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using Ninject;
 
 namespace Lab.Core.Di
@@ -24,10 +29,20 @@ namespace Lab.Core.Di
             return kernel;
         }
 
+        private static List<Assembly> processedAssemblies = new List<Assembly>();
         private static void CreateKernelInstance()
         {
             kernel = new StandardKernel();
-            kernel.Load(AppDomain.CurrentDomain.GetAssemblies());
+            Load();
+        }
+
+        public static void Load()
+        {
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(assembly => assembly.GetName().Name.StartsWith("Lab.")
+                && !processedAssemblies.Contains(assembly));
+            
+            kernel.Load(assemblies);
+            processedAssemblies.AddRange(assemblies);
         }
     }
 }

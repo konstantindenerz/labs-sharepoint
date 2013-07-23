@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 
 namespace Lab.Core.Di
@@ -6,7 +7,7 @@ namespace Lab.Core.Di
     /// <summary>
     ///     This HTTP module should be used to create a container for dependency injection.
     /// </summary>
-    public class SpDiHttpModule : IHttpModule, IDisposable
+    public class DiHttpModule : IHttpModule, IDisposable
     {
         public void Init(HttpApplication context)
         {

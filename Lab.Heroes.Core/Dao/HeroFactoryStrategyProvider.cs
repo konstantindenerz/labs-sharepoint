@@ -12,7 +12,7 @@ namespace Lab.Heroes.Core.Dao
     {
         protected override IDictionary<Type, IObjectFactoryStrategy> CreateInstance(IContext context)
         {
-            return new Dictionary<Type, IObjectFactoryStrategy>{{typeof(IHeroFactoryStrategy), context.Kernel.Get<IHeroFactoryStrategy>()}};
+            return new Dictionary<Type, IObjectFactoryStrategy>{{typeof(IHero), context.Kernel.Get<IHeroFactoryStrategy>()}};
         }
     }
 }
