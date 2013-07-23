@@ -37,11 +37,11 @@
     <AssemblyOriginatorKeyFile>test.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -49,6 +49,7 @@
     <Compile Include="Dao\Adapter\Internal\HeroNameAdapter.cs" />
     <Compile Include="Dao\Adapter\Internal\HeroSecretBaseAdapter.cs" />
     <Compile Include="Dao\Adapter\Internal\OtherUnusedAdapter.cs" />
+    <Compile Include="Dao\HeroesDaoModule.cs" />
     <Compile Include="DomainObjects\IDesperado.cs" />
     <Compile Include="DomainObjects\IHero.cs" />
     <Compile Include="DomainObjects\Internal\Hero.cs" />

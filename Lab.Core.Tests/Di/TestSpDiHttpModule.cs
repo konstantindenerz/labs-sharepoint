@@ -17,7 +17,7 @@ namespace Lab.Core.Tests.Di
         {
             var module = new SpDiHttpModule();
             Assert.IsNull(DiHelper.Kernel);
-            Assert.IsNull(Dao);
+            Assert.IsNull(Dao); 
 
             module.Init(null);
             

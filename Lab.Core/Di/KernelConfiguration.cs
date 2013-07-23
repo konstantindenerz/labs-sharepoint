@@ -1,4 +1,5 @@
-﻿using Lab.Core.Dao;
+﻿using System;
+using Lab.Core.Dao;
 using Lab.Core.Dao.Adapter;
 using Lab.Core.Dao.Adapter.Internal;
 using Lab.Core.Dao.Internal;
@@ -25,22 +26,10 @@ namespace Lab.Core.Di
 
         private static void CreateKernelInstance()
         {
-            //kernel = new StandardKernel();
-            ////TODO Move this code to seperate modules...
-            //kernel.Bind(typeof(IObjectAdministrationService<>)).To(typeof(GenericObjectAdministrationService<>));
-            //kernel.Bind(typeof(IObjectDao<>)).To(typeof(GenericObjectDao<>));
-            //kernel.Bind(typeof(IDataAssembler<>)).To(typeof(GenericDataAssembler<>));
-            //kernel.Bind(typeof(IDataAdapter<>)).To(typeof(HeroSecretBaseAdapter<>));
-            //kernel.Bind(typeof(IDataAdapter<>)).To(typeof(OtherUnusedAdapter<>));
-            //kernel.Bind(typeof(IDataAdapter<>)).To(typeof(HeroNameAdapter<>));
-            //kernel.Bind(typeof(IListItemDispatcher<>)).To(typeof(MockListItemDispatcher<>));
-            //OtherStuff();
+            kernel = new StandardKernel();
+            kernel.Load(AppDomain.CurrentDomain.GetAssemblies());
         }
 
-        private static void OtherStuff()
-        {
-            //ObjectFactory.Register<IHero>(new HeroFactoryStrategy());
-        }
     }
 
 }
