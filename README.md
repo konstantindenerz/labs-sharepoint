@@ -1,3 +1,7 @@
-lab-training
+lab-sharepoint
 ============
-test
+
+:copyright: 2013 Konstantin Denerz  
+
+        
+          
